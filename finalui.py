@@ -19,7 +19,9 @@ st.markdown("""
         background: white;
     }
     #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
+    footer {visibility: hidden;}    
+    .st-emotion-cache-yinll1.e1hznt4w1 {visibility: hidden !important;}
+    span[data-testid="stHeaderActionElements"]  {visibility: hidden !important;}    
     header {background-color: black;}
     /* Global Styles */
     .main {
@@ -81,23 +83,70 @@ st.markdown("""
     }
 
     .hero-title {
-        font-size: clamp(2.5rem, 8vw, 5rem);
-        font-weight: 700;
+        font-size: 6rem !important; /* Increased base size */
+        font-weight: 700 !important;
         margin-bottom: 1.5rem;
+        padding: 5px 5px 5px 40px !important;
         background: linear-gradient(135deg, #fff 0%, rgba(168, 85, 247, 1) 50%, rgba(14, 165, 233, 1) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         animation: shimmer 3s ease-in-out infinite;
         background-size: 200% 200%;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+
+    }
+    .hero-slogan{
+        font-size: 35px !important; 
+        padding-left: 35px !important;
+        margin-bottom: 1rem !important;
+        color: #E6E6E6 !important;  
+        font-family: BlinkMacSystemFont !important;    
+    }
+    .hero-subtitle {
+        font-size: 15px !important;
+        color: #E0E0E0;
+        opacity: 0.8;
+        margin-bottom: 2rem;
+        margin-top: 0rem !important;
+        line-height: 1.6;
+    }
+            
+    .cta-button {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: white !important;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(168, 85, 247, 0.8));
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        z-index: 99999;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none !important;
     }
 
-    .hero-subtitle {
-        font-size: clamp(0.5rem, 3vw, 1rem);
-        color: rgba(255, 255, 255, 0.8);
-        margin-bottom: 2rem;
-        margin-top: 2rem;
-        line-height: 1.6;
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+    }
+
+    .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .cta-button:hover::before {
+        left: 100%;
     }
 
     @keyframes shimmer {
@@ -112,14 +161,49 @@ st.markdown("""
 
 
     /* Mobile Responsive */
+            
+    @media (max-width: 1200px) {
+        .hero-title {
+            font-size: 5rem !important;
+        }
+    }
+            
     @media (max-width: 768px) {
+            
+        .hero-content {
+            padding: 2rem 0.1rem;
+
+        }
         .hero-container {
             padding: 1rem;
-            min-height: 70vh;
+            min-height: 50vh;
             max-width: 95vw;
             margin-right: 1.5vw;
             margin-left: 1.5vw;
         }
+        .hero-title {
+            font-size: 2.5rem !important;
+            padding-left: 25px !important;
+        }
+        .hero-slogan{
+            font-size: 12px !important;
+            transform: scale(1.2) !important;
+            font-weight: 400 !important;
+            padding-left: 22px !important;
+            font-family: Segoe UI !important;
+        }
+        .hero-bg {
+            position: absolute;
+            top: -30%;
+            width: 120%;
+            height: 150%;
+        }
+        .hero-subtitle{
+            font-family: 'Inter', sans-serif !important;    
+            font-size: 12px !important;
+            margin-bottom: 1.5rem;
+        }
+    }
     
     @media (max-width: 480px) {
         .stats-grid {
@@ -169,8 +253,11 @@ def main():
         <div class="hero-bg"></div>
         <div class="hero-content">
             <h1 class="hero-title">AutoMARK</h1>
-            <h2 style = "font-size: clamp(1rem, 3vw, 1.5rem); margin-bottom: 2rem;">| Revolutionize Your Assessment Process |</h2>
+            <h2 class="hero-slogan"> Revolutionize Your Assessment Process ✨</h2>
+            <p class="hero-subtitle">Transform your grading process with cutting-edge AI technology. Fast, Accurate and Reliable Automated MCQs evaluation.</p>
+            <a href="#" class="cta-button">AI Powered</a>
         </div>
+    </div>
     """, unsafe_allow_html=True)
 
 
