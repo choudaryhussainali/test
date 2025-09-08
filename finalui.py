@@ -16,7 +16,7 @@ st.markdown("""
         padding-top: 0 !important;
     }
    /* header[data-testid="stHeader"] {background: white;} */
-    #MainMenu {visibility: hidden;}
+    /* #MainMenu {visibility: hidden;} */
     footer {visibility: hidden;}    
     .st-emotion-cache-yinll1.e1hznt4w1 {visibility: hidden !important;}
     span[data-testid="stHeaderActionElements"]  {visibility: hidden !important;}    
@@ -263,4 +263,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
