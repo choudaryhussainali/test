@@ -225,15 +225,15 @@ st.markdown("""
                 opacity: 1;
             }
             25% {
-                transform: scale(1.23) translateY(-3px);
+                transform: scale(1.23) translateY(-2px);
                 opacity: 0.95;
             }
             50% {
-                transform: scale(1.19) translateY(2px);
+                transform: scale(1.19) translateY(1px);
                 opacity: 0.9;
             }
             75% {
-                transform: scale(1.22) translateY(-1px);
+                transform: scale(1.22) translateY(-0.5px);
                 opacity: 1;
             }
         }
@@ -311,4 +311,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
