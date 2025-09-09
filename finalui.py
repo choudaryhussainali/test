@@ -1,4 +1,16 @@
 import streamlit as st
+from PIL import Image
+import io
+import time
+import json
+import os
+import requests
+import numpy as np
+import google.generativeai as genai
+import random
+from fun_mcqs import fun_mcqs
+import os
+from dotenv import load_dotenv
 
 st.set_page_config(
     page_title="AutoMARK AI - Professional MCQs Grading",
@@ -11,18 +23,21 @@ st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
     
+    /* Streamlit Settings*/
+            
+    footer {visibility: hidden;}
+    /*header[data-testid="stHeader"] {background: white;}*/
+    /* #MainMenu {visibility: hidden;} */    
+    .st-emotion-cache-yinll1.e1hznt4w1 {visibility: hidden !important;}
+    span[data-testid="stHeaderActionElements"]  {visibility: hidden !important;}    
+    /* header {background-color: black;}*/            
+
+
     /* Hide Streamlit default elements */
     .main > div {
         padding-top: 0 !important;
     }
-    /*header[data-testid="stHeader"] {
-        background: white;
-    }*/
-    /* #MainMenu {visibility: hidden;} */
-    footer {visibility: hidden;}    
-    .st-emotion-cache-yinll1.e1hznt4w1 {visibility: hidden !important;}
-    span[data-testid="stHeaderActionElements"]  {visibility: hidden !important;}    
-    /* header {background-color: black;}*/
+                    
     /* Global Styles */
     .main {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -41,7 +56,7 @@ st.markdown("""
         align-items: center;
         justify-content: center;
         border-radius: 60px !important;
-        margin: -2.5rem -2rem 2rem -2rem;
+        margin: -3rem -2rem 2rem -2rem;
         padding: 0
     }
     
@@ -221,19 +236,19 @@ st.markdown("""
         
         @keyframes luxuryWordmb {
             0%, 100% {
-                transform: scale(1.2) translateY(0);
+                transform: scale(1.17) translateY(0);
                 opacity: 1;
             }
             25% {
-                transform: scale(1.23) translateY(-2px);
+                transform: scale(1.20) translateY(-2px);
                 opacity: 0.95;
             }
             50% {
-                transform: scale(1.19) translateY(1px);
+                transform: scale(1.16) translateY(1px);
                 opacity: 0.9;
             }
             75% {
-                transform: scale(1.22) translateY(-0.5px);
+                transform: scale(1.19) translateY(-0.5px);
                 opacity: 1;
             }
         }
@@ -311,5 +326,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
