@@ -214,7 +214,7 @@ st.markdown("""
             font-size: 12px !important;
             font-weight: 400 !important;
             padding-left: 25px !important;
-            font-family: BlinkMacSystemFon !important;
+            font-family: BlinkMacSystemFont !important;
             background-size: 300% auto;
             animation: luxuryWordmb 6s ease-in-out infinite !important;
         }
@@ -311,3 +311,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
