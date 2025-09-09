@@ -15,12 +15,14 @@ st.markdown("""
     .main > div {
         padding-top: 0 !important;
     }
-   /* header[data-testid="stHeader"] {background: white;} */
+    /*header[data-testid="stHeader"] {
+        background: white;
+    }*/
     /* #MainMenu {visibility: hidden;} */
     footer {visibility: hidden;}    
     .st-emotion-cache-yinll1.e1hznt4w1 {visibility: hidden !important;}
     span[data-testid="stHeaderActionElements"]  {visibility: hidden !important;}    
-    header {background-color: black;}
+    /* header {background-color: black;}*/
     /* Global Styles */
     .main {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -47,7 +49,7 @@ st.markdown("""
     .hero-bg {
         position: absolute;
         top: -50%;
-        width: 150%;
+        width: 160%;
         height: 150%;
         background: 
             radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.4) 0%, transparent 50%),
@@ -94,13 +96,36 @@ st.markdown("""
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 
     }
-    .hero-slogan{
-        font-size: 35px !important; 
+    .hero-slogan {
+        font-size: 33px !important;
         padding-left: 35px !important;
         margin-bottom: 1rem !important;
-        color: #E6E6E6 !important;  
-        font-family: BlinkMacSystemFont !important;    
+        font-family: BlinkMacSystemFont !important;
+        font-weight: 700;
+        background-size: 300% auto;
+        animation: luxuryWord 6s ease-in-out infinite;
     }
+
+    /* Smooth bounce + float */
+    @keyframes luxuryWord {
+        0%, 100% {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+        25% {
+            transform: scale(1.03) translateY(-6px);
+            opacity: 0.95;
+        }
+        50% {
+            transform: scale(0.98) translateY(4px);
+            opacity: 0.9;
+        }
+        75% {
+            transform: scale(1.02) translateY(-3px);
+            opacity: 1;
+        }
+    }
+
     .hero-subtitle {
         font-size: 15px !important;
         color: #E0E0E0;
@@ -155,6 +180,8 @@ st.markdown("""
             background-position: 100% 50%;
         }
     }
+            
+    
 
 
 
@@ -185,15 +212,36 @@ st.markdown("""
         }
         .hero-slogan{
             font-size: 12px !important;
-            transform: scale(1.2) !important;
             font-weight: 400 !important;
-            padding-left: 22px !important;
-            font-family: Segoe UI !important;
+            padding-left: 25px !important;
+            font-family: BlinkMacSystemFon !important;
+            background-size: 300% auto;
+            animation: luxuryWordmb 6s ease-in-out infinite !important;
         }
+        
+        @keyframes luxuryWordmb {
+            0%, 100% {
+                transform: scale(1.2) translateY(0);
+                opacity: 1;
+            }
+            25% {
+                transform: scale(1.23) translateY(-3px);
+                opacity: 0.95;
+            }
+            50% {
+                transform: scale(1.19) translateY(2px);
+                opacity: 0.9;
+            }
+            75% {
+                transform: scale(1.22) translateY(-1px);
+                opacity: 1;
+            }
+        }
+
         .hero-bg {
             position: absolute;
             top: -30%;
-            width: 120%;
+            width: 110%;
             height: 150%;
         }
         .hero-subtitle{
@@ -263,6 +311,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
