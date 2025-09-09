@@ -1,16 +1,5 @@
 import streamlit as st
-from PIL import Image
-import io
-import time
-import json
 import os
-import requests
-import numpy as np
-import google.generativeai as genai
-import random
-from fun_mcqs import fun_mcqs
-import os
-from dotenv import load_dotenv
 
 st.set_page_config(
     page_title="AutoMARK AI - Professional MCQs Grading",
@@ -326,3 +315,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
