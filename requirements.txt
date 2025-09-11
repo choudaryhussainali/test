@@ -5,3 +5,6 @@ opencv-python
 google-generativeai
 pandas
 python-dotenv
+base64
+streamlit_javascript
+streamlit.components.v1
