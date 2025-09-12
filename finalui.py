@@ -85,7 +85,7 @@ st.markdown("""
         top: 0;
         bottom: 0;
         z-index: 999;
-        min-width: 310px;
+        min-width: 280px;
         max-width: 350px; /* adjust width */
         box-shadow: 2px 0px 8px rgba(0,0,0,0.1);
         transition: all 0.3s ease-in-out;
@@ -2088,3 +2088,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
