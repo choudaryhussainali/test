@@ -90,6 +90,13 @@ st.markdown("""
         box-shadow: 2px 0px 8px rgba(0,0,0,0.1);
         transition: all 0.3s ease-in-out;
     }
+    [data-testid="stSidebar"][aria-expanded="false"] {
+        min-width: 0 !important;
+        max-width: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        box-shadow: none !important;
+    }
 
 
 
@@ -1607,6 +1614,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
